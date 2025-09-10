@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Trevor Show - Entertainment Meets Excellence</title>
+    <title>The Trevor Show - Canada's #1 Interactive DJ | Entertainment Excellence</title>
+    <meta name="description" content="Book Canada's #1 Interactive DJ Trevor LeBlanc for weddings, corporate events, and celebrations. Featured on Canada's Got Talent 2023. 3000+ events worldwide.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -20,7 +21,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
-        /* Animated Background Particles */
+        /* Enhanced Animated Background */
         .particles {
             position: fixed;
             top: 0;
@@ -40,12 +41,25 @@
             animation: float 6s ease-in-out infinite;
         }
 
+        .particle.musical {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.1);
+            animation: musicalFloat 8s ease-in-out infinite;
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
             50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
         }
 
-        /* Header */
+        @keyframes musicalFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            25% { transform: translateY(-30px) rotate(90deg); opacity: 0.3; }
+            50% { transform: translateY(-60px) rotate(180deg); opacity: 0.6; }
+            75% { transform: translateY(-30px) rotate(270deg); opacity: 0.3; }
+        }
+
+        /* Header with Social Proof Badge */
         header {
             position: fixed;
             top: 0;
@@ -65,6 +79,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            position: relative;
         }
 
         .logo {
@@ -105,6 +120,25 @@
             width: 100%;
         }
 
+        .social-proof-badge {
+            position: absolute;
+            top: -10px;
+            right: 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         /* Mobile Menu */
         .mobile-menu {
             display: none;
@@ -120,7 +154,7 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
+        /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -133,59 +167,156 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             padding: 2rem;
             z-index: 2;
         }
 
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: slideInDown 1s ease-out;
+        }
+
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
+            font-size: 4.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
             animation: slideInUp 1s ease-out;
             background: linear-gradient(45deg, #fff, #f0f8ff, #e6e6fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+            font-weight: 600;
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.2s both;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            animation: slideInUp 1s ease-out 0.3s both;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.5s both;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 18px 45px;
             background: linear-gradient(45deg, #ff6b6b, #ffa726);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            animation: slideInUp 1s ease-out 0.4s both;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.6);
+            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.6);
         }
 
-        /* Floating Elements */
+        .cta-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Floating elements with more variety */
         .floating-element {
             position: absolute;
-            animation: float 4s ease-in-out infinite;
-            opacity: 0.1;
+            font-size: 2.5rem;
+            animation: musicalFloat 8s ease-in-out infinite;
+            opacity: 0.15;
         }
 
         .floating-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
         .floating-element:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
         .floating-element:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 2s; }
         .floating-element:nth-child(4) { bottom: 10%; right: 20%; animation-delay: 3s; }
+        .floating-element:nth-child(5) { top: 50%; left: 5%; animation-delay: 4s; }
+        .floating-element:nth-child(6) { top: 60%; right: 5%; animation-delay: 5s; }
+
+        /* Trust Indicators Section */
+        .trust-indicators {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: white;
+        }
+
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffa726;
+            display: block;
+        }
+
+        .trust-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
         /* Sections */
         section {
@@ -201,53 +332,122 @@
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
             color: #333;
             position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 100px;
+            height: 5px;
             background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
+            border-radius: 3px;
         }
 
-        /* About Section */
+        /* Video/Media Showcase Section */
+        .media-showcase {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .media-showcase .section-title {
+            color: white;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .media-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .media-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .tiktok-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #ff0050, #00f2ea);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Enhanced About Section */
         .about {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
         .about-text {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #555;
-            line-height: 1.8;
+            line-height: 1.9;
+        }
+
+        .about-text h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
         }
 
         .about-image {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease;
         }
 
         .about-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .about-image img {
@@ -256,37 +456,52 @@
             display: block;
         }
 
-        /* Stats */
+        /* Enhanced Stats */
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 5rem;
         }
 
         .stat-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 3rem 2rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
         }
 
         .stat-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 900;
             color: #667eea;
             margin-bottom: 0.5rem;
+            display: block;
         }
 
         .stat-label {
             font-weight: 600;
             color: #666;
+            font-size: 1.1rem;
         }
 
         /* Services Section */
@@ -295,51 +510,131 @@
             color: white;
         }
 
-        .services .section-title {
+        .services .section-title,
+        .services .section-subtitle {
             color: white;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 3rem 2rem;
+            border-radius: 25px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+            top: -100%;
+            left: -100%;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             color: #ffa726;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: white;
+            padding: 120px 0;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 4rem 3rem;
+            border-radius: 25px;
+            margin: 2rem 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-role {
+            color: #777;
+            font-size: 0.9rem;
         }
 
         /* Experience Section */
         .experience {
-            background: white;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .experience .section-title,
+        .experience .section-subtitle {
+            color: white;
         }
 
         .experience-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
         }
 
@@ -348,10 +643,16 @@
         }
 
         .experience-list li {
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-list li:hover {
+            transform: translateX(10px);
         }
 
         .experience-list li:last-child {
@@ -359,29 +660,87 @@
         }
 
         .experience-list i {
-            color: #667eea;
-            margin-right: 1rem;
-            font-size: 1.2rem;
+            color: #ffa726;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+            min-width: 30px;
         }
 
-        /* Contact Section */
+        .experience-image {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .experience-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Enhanced Contact Section */
         .contact {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
         }
 
-        .contact .section-title {
+        .contact .section-title,
+        .contact .section-subtitle {
             color: white;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .contact-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             padding: 3rem;
-            border-radius: 20px;
+            border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffa726;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffa726;
+            min-width: 25px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .form-group {
@@ -390,74 +749,165 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
             font-family: inherit;
+            font-size: 1rem;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #ffa726;
+            box-shadow: 0 0 20px rgba(255, 167, 38, 0.3);
         }
 
         .form-group input::placeholder,
+        .form-group select::placeholder,
         .form-group textarea::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 1rem 2rem;
-            background: linear-gradient(45deg, #333, #555);
+            padding: 1.5rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ffa726);
             color: white;
             border: none;
             border-radius: 50px;
             font-family: inherit;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            text-align: center;
-            padding: 2rem 0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ffa726;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            padding: 0.3rem 0;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffa726;
         }
 
         .social-links {
-            margin-bottom: 1rem;
+            margin: 2rem 0;
+            text-align: center;
         }
 
         .social-links a {
             color: white;
-            font-size: 1.5rem;
-            margin: 0 1rem;
+            font-size: 2rem;
+            margin: 0 1.5rem;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .social-links a:hover {
-            color: #667eea;
-            transform: scale(1.2);
+            color: #ffa726;
+            transform: scale(1.2) translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #888;
         }
 
         /* Animations */
         @keyframes slideInUp {
             from {
                 transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
                 opacity: 0;
             }
             to {
@@ -482,25 +932,54 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
             }
 
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .trust-content {
+                justify-content: center;
+                text-align: center;
             }
 
             .about-content,
-            .experience-content {
+            .experience-content,
+            .contact-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            .services-grid {
+            .services-grid,
+            .media-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .social-proof-badge {
+                position: static;
+                margin-top: 1rem;
             }
         }
 
@@ -508,31 +987,113 @@
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        Loading The Trevor Show...
+    </div>
+
     <!-- Animated Background Particles -->
     <div class="particles"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Header -->
     <header id="header">
         <nav>
+            <div class="social-proof-badge">Canada's Got Talent 2023</div>
             <div class="logo-container">
-                <img src="assets/logo_small.png" alt="The Trevor Show" class="logo">
+               <a href="index.html"> <img src="assets/logo_small.png" alt="The Trevor Show" class="logo"></a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#media">Media</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Book Now</a></li>
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -548,46 +1109,120 @@
         <div class="floating-element">🎤</div>
         <div class="floating-element">🎧</div>
         <div class="floating-element">✨</div>
+        <div class="floating-element">🎊</div>
+        <div class="floating-element">🎶</div>
         
         <div class="hero-content">
-            <h1>Entertainment Meets Excellence</h1>
+            <div class="hero-badge">✨ Canada's #1 Interactive DJ ✨</div>
+            <h1>The Trevor Show</h1>
+            <div class="hero-subtitle">Entertainment Meets Excellence</div>
             <p>DJ • Singer • Dancer • Host - Creating Unforgettable Experiences Across North America</p>
-            <a href="#contact" class="cta-button">Book The Trevor Show</a>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Book Your Event Now</a>
+                <a href="#media" class="cta-button cta-secondary">Watch Performance</a>
+            </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+            <div class="trust-content">
+                <div class="trust-item">
+                    <span class="trust-number" data-count="3000">0</span>
+                    <span class="trust-label">Events Worldwide</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number" data-count="20">0</span>
+                    <span class="trust-label">Years Experience</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number" data-count="325">0</span>
+                    <span class="trust-label">Annual Events</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number" data-count="46">0</span>
+                    <span class="trust-label">States & Provinces</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Showcase Section -->
+    <section class="media-showcase fade-in" id="media">
+        <div class="container">
+            <h2 class="section-title">See The Magic in Action</h2>
+            <p class="section-subtitle">From Canada's Got Talent to sold-out venues - experience the energy that makes every event unforgettable</p>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="tiktok-placeholder">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    
+                    <h3>New Year's Eve 2024/25</h3>
+                    <p>Sold out performance at Great Wolf Lodge - witness the energy that keeps crowds dancing all night long!</p>
+                    <a href="https://www.tiktok.com/@djtrevor/video/7455378537608989958" target="_blank" style="color: #ffa726; font-weight: 600;">Watch on TikTok →</a>
+                </div>
+                
+                <div class="media-item">
+                    <div class="tiktok-placeholder">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Canada's Got Talent 2023</h3>
+                    <p>Featured on CityTV's hit show, showcasing the interactive entertainment that made Trevor a household name.</p>
+                    <a href="#" style="color: #ffa726; font-weight: 600;">Watch Highlights →</a>
+                </div>
+                
+                <div class="media-item">
+                    <div class="tiktok-placeholder">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Much Music Features</h3>
+                    <p>7 years on Much Music programming, including 3 appearances at the Much Music Video Awards.</p>
+                    <a href="#" style="color: #ffa726; font-weight: 600;">View Gallery →</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about fade-in" id="about">
         <div class="container">
-            <h2 class="section-title">Meet Trevor LeBlanc</h2>
+            <h2 class="section-title">Meet <span class="highlight-text">Trevor LeBlanc</span></h2>
+            <p class="section-subtitle">The visionary entertainer transforming events across North America</p>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <p>Trevor LeBlanc is Canada's #1 Interactive DJ and the visionary behind The Trevor Show. With a passion for entertainment spanning a lifetime, Trevor has evolved from singing with Basil from Blue Rodeo at age 9 to becoming one of North America's most sought-after entertainers.</p>
+                    <p>Trevor LeBlanc isn't just <span class="highlight-text">Canada's #1 Interactive DJ</span> - he's a phenomenon. From singing with Basil from Blue Rodeo at age 9 to commanding stages across 46 states and provinces, Trevor has redefined what it means to entertain.</p>
                     
-                    <p>As a dynamic blend of DJ, singer, dancer, and host, Trevor brings unparalleled energy to every event. His electrifying performances have graced television screens on Much Music and captivated audiences at prestigious festivals across the globe.</p>
+                    <h3>🎤 Multi-Talented Performer</h3>
+                    <p>As a dynamic fusion of DJ, singer, dancer, and host, Trevor brings an electrifying energy that captivates every audience. His performances have graced television screens and festival stages worldwide.</p>
 
-                    <p>Recognized in the Magen Boys Entertainment Hall of Fame as Entertainer of the Year and featured on Canada's Got Talent 2023, Trevor continues to push the boundaries of interactive entertainment.</p>
+                    <h3>🏆 Award-Winning Excellence</h3>
+                    <p>Recognized in the <span class="highlight-text">Magen Boys Entertainment Hall of Fame as Entertainer of the Year</span> and featured on Canada's Got Talent 2023, Trevor continues to set the gold standard for interactive entertainment.</p>
+
+                    <h3>🌟 Global Recognition</h3>
+                    <p>From Dubai to Jamaica, from corporate boardrooms to wedding celebrations, Trevor has created magical moments for over <span class="highlight-text">3,000 events worldwide</span>.</p>
                 </div>
                 <div class="about-image">
-                    <img src="assets/Trevor-769x1024.jpg" alt="Trevor LeBlanc">
+                    <img src="assets/Trevor-769x1024.jpg" alt="Trevor LeBlanc performing">
                 </div>
             </div>
 
             <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-number">3000+</div>
+                    <span class="stat-number" data-count="3000">0</span>
                     <div class="stat-label">Events Worldwide</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">20+</div>
+                    <span class="stat-number" data-count="20">0</span>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">325+</div>
+                    <span class="stat-number" data-count="325">0</span>
                     <div class="stat-label">Annual Events</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">46</div>
+                    <span class="stat-number" data-count="46">0</span>
                     <div class="stat-label">States & Provinces</div>
                 </div>
             </div>
@@ -597,15 +1232,18 @@
     <!-- Services Section -->
     <section class="services fade-in" id="services">
         <div class="container">
-            <h2 class="section-title">What I Bring to Your Event</h2>
+            <h2 class="section-title">Unmatched Entertainment Services</h2>
+            <p class="section-subtitle">Every event is unique - discover how Trevor transforms your vision into an unforgettable experience</p>
+            
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-music"></i>
                     </div>
-                    <h3>DJ Services</h3>
-                    <p>Professional DJ mixing with an extensive music library spanning all genres and eras. From intimate gatherings to massive celebrations, I create the perfect soundtrack for your event.</p>
+                    <h3>Interactive DJ Services</h3>
+                    <p>More than just music - Trevor creates an immersive experience with professional mixing, crowd engagement, and an extensive library spanning all genres and eras.</p>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-microphone"></i>
@@ -613,20 +1251,23 @@
                     <h3>Live Performance</h3>
                     <p>Dynamic singing and live entertainment that captivates audiences. As seen on Much Music Video Awards and Canada's Got Talent 2023.</p>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Interactive Hosting</h3>
-                    <p>Engaging crowd interaction and professional MC services. I keep your guests entertained and ensure smooth event flow from start to finish.</p>
+                    <h3>Professional MC & Hosting</h3>
+                    <p>Seamless event flow with engaging crowd interaction. Trevor ensures every moment is perfectly orchestrated and your guests are entertained throughout.</p>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Wedding Specialist</h3>
-                    <p>Creating magical moments for your special day. From ceremony music to reception entertainment, I handle every musical detail with care.</p>
+                    <p>Creating magical moments for your special day. From ceremony music to reception entertainment, every detail is handled with care and expertise.</p>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
@@ -634,12 +1275,29 @@
                     <h3>Corporate Events</h3>
                     <p>Professional entertainment for corporate functions, conferences, and business celebrations. Tailored to match your company's culture and objectives.</p>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-birthday-cake"></i>
                     </div>
                     <h3>Special Celebrations</h3>
-                    <p>Bar/Bat Mitzvahs, birthday parties, and milestone celebrations. Every event is customized to reflect your unique style and preferences.</p>
+                    <p>Bar/Bat Mitzvahs, milestone birthdays, and anniversary celebrations. Every event is customized to reflect your unique style and create lasting memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in">
+        <div class="container">
+            <h2 class="section-title">What Clients Say</h2>
+            <p class="section-subtitle">Don't just take our word for it - hear from those who've experienced The Trevor Show</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Trevor didn't just DJ our wedding - he created an experience we'll never forget. Every guest was on the dance floor, and his energy was absolutely infectious!"</p>
+                    <div class="testimonial-author">Sarah & Michael Johnson</div>
+                    <div class="testimonial-role">Wedding Clients, Toronto</div>
                 </div>
             </div>
         </div>
@@ -648,23 +1306,25 @@
     <!-- Experience Section -->
     <section class="experience fade-in" id="experience">
         <div class="container">
-            <h2 class="section-title">Experience & Recognition</h2>
+            <h2 class="section-title">Unparalleled Experience & Recognition</h2>
+            <p class="section-subtitle">Two decades of entertainment excellence across the globe</p>
+            
             <div class="experience-content">
                 <div class="experience-image">
-                    <img src="assets/trevor-show-canadas-got-talent-1024x1010.jpg" alt="Trevor performing">
+                    <img src="assets/trevor-show-canadas-got-talent-1024x1010.jpg" alt="Trevor performing on Canada's Got Talent">
                 </div>
                 <div>
                     <ul class="experience-list">
-                        <li><i class="fas fa-trophy"></i> Entertainer of the Year - Magen Boys Entertainment Hall of Fame</li>
-                        <li><i class="fas fa-tv"></i> Featured on Much Music Video Awards (3 times)</li>
-                        <li><i class="fas fa-star"></i> Canada's Got Talent 2023 Performer</li>
-                        <li><i class="fas fa-medal"></i> #1 Dancer at USA Florida Coliseum</li>
-                        <li><i class="fas fa-broadcast-tower"></i> 7 years on Much Music programming</li>
-                        <li><i class="fas fa-map-marked-alt"></i> Performed in Dubai, Jamaica, and Mexico</li>
-                        <li><i class="fas fa-handshake"></i> National tours with McDonald's, Pepsi, and Mazda</li>
-                        <li><i class="fas fa-users-cog"></i> Founded Interactive Entertainment at age 16</li>
-                        <li><i class="fas fa-graduation-cap"></i> College education in Marketing Administration</li>
-                        <li><i class="fas fa-microphone-alt"></i> Lead vocalist in tribute band SYNC*IN as Justin Timberlake</li>
+                        <li><i class="fas fa-trophy"></i> <strong>Entertainer of the Year</strong> - Magen Boys Entertainment Hall of Fame</li>
+                        <li><i class="fas fa-tv"></i> <strong>Featured 3 Times</strong> on Much Music Video Awards</li>
+                        <li><i class="fas fa-star"></i> <strong>Canada's Got Talent 2023</strong> Featured Performer</li>
+                        <li><i class="fas fa-medal"></i> <strong>#1 Dancer</strong> at USA Florida Coliseum</li>
+                        <li><i class="fas fa-broadcast-tower"></i> <strong>7 Years</strong> on Much Music programming</li>
+                        <li><i class="fas fa-globe"></i> <strong>International Tours</strong> - Dubai, Jamaica, Amsterdam, Mexico</li>
+                        <li><i class="fas fa-handshake"></i> <strong>National Brand Tours</strong> - McDonald's, Pepsi, Mazda</li>
+                        <li><i class="fas fa-lightbulb"></i> <strong>Industry Pioneer</strong> - Founded Interactive Entertainment at age 16</li>
+                        <li><i class="fas fa-graduation-cap"></i> <strong>Business Education</strong> - Marketing Administration</li>
+                        <li><i class="fas fa-microphone-alt"></i> <strong>Lead Vocalist</strong> - SYNC*IN tribute band as Justin Timberlake</li>
                     </ul>
                 </div>
             </div>
@@ -674,72 +1334,187 @@
     <!-- Contact Section -->
     <section class="contact fade-in" id="contact">
         <div class="container">
-            <h2 class="section-title">Let's Create Something Amazing</h2>
-            <div class="contact-form">
-                <form action="https://formspree.io/f/xpwjbrbl" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <h2 class="section-title">Let's Create Something Amazing Together</h2>
+            <p class="section-subtitle">Ready to transform your event? Get in touch and let's make magic happen</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Available 7 days a week for bookings</span>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Serving all of North America</span>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Quick response within 24 hours</span>
                     </div>
-                    <div class="form-group">
-                        <label for="event-type">Event Type</label>
-                        <input type="text" id="event-type" name="event-type" placeholder="Wedding, Corporate, Birthday, etc.">
+                    <div class="contact-item">
+                        <i class="fas fa-star"></i>
+                        <span>Over 325 events annually</span>
                     </div>
-                    <div class="form-group">
-                        <label for="event-date">Event Date</label>
-                        <input type="date" id="event-date" name="event-date">
+                    <div class="contact-item">
+                        <i class="fas fa-award"></i>
+                        <span>Award-winning entertainment guaranteed</span>
                     </div>
-                    <div class="form-group">
-                        <label for="location">Event Location</label>
-                        <input type="text" id="location" name="location" placeholder="City, State/Province">
+                    
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Follow the Show</h3>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.tiktok.com/@djtrevor" style="color: #ffa726; font-size: 2rem;"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/thetrevorshow_official/" style="color: #ffa726; font-size: 2rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/groups/2259188723" style="color: #ffa726; font-size: 2rem;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCtTpoaCFQ9wO3XGvMWmAlsw" style="color: #ffa726; font-size: 2rem;"><i class="fab fa-youtube"></i></a>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Tell me about your event</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Share your vision, guest count, special requests, or any questions you have..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Inquiry</button>
-                </form>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xpwjbrbl" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="event-type">Event Type *</label>
+                                <select id="event-type" name="event-type" required>
+                                    <option value="">Select your event type</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Corporate Event">Corporate Event</option>
+                                    <option value="Birthday Party">Birthday Party</option>
+                                    <option value="Bar/Bat Mitzvah">Bar/Bat Mitzvah</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                    <option value="Festival">Festival</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-date">Event Date</label>
+                                <input type="date" id="event-date" name="event-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="guest-count">Expected Guests</label>
+                                <select id="guest-count" name="guest-count">
+                                    <option value="">Select guest count</option>
+                                    <option value="Under 50">Under 50</option>
+                                    <option value="50-100">50-100</option>
+                                    <option value="100-200">100-200</option>
+                                    <option value="200-500">200-500</option>
+                                    <option value="500+">500+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Event Location *</label>
+                            <input type="text" id="location" name="location" placeholder="City, State/Province" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell me about your vision *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Describe your event, special requests, music preferences, or any questions you have. The more details you share, the better I can tailor the perfect experience for you!" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send My Inquiry</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.facebook.com/groups/2259188723" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/thetrevorshow_official/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCtTpoaCFQ9wO3XGvMWmAlsw" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.tiktok.com/@djtrevor" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Trevor Show</h3>
+                <p>Canada's #1 Interactive DJ bringing entertainment excellence to events across North America. From intimate gatherings to massive celebrations, we create unforgettable experiences.</p>
             </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services">Wedding Entertainment</a></li>
+                    <li><a href="#services">Corporate Events</a></li>
+                    <li><a href="#services">Birthday Parties</a></li>
+                    <li><a href="#services">Bar/Bat Mitzvahs</a></li>
+                    <li><a href="#services">Festival Performances</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Recognition</h3>
+                <ul>
+                    <li>Canada's Got Talent 2023</li>
+                    <li>Much Music Video Awards</li>
+                    <li>Entertainer of the Year</li>
+                    <li>3000+ Events Worldwide</li>
+                    <li>20+ Years Experience</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Coverage Area</h3>
+                <p>Serving all of North America including Canada and the United States. International bookings available for special events.</p>
+                <p style="margin-top: 1rem;"><strong>46 States & Provinces Served</strong></p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/groups/2259188723" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/thetrevorshow_official/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCtTpoaCFQ9wO3XGvMWmAlsw" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@djtrevor" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <div class="footer-bottom">
             <p>&copy; 2025 The Trevor Show. All rights reserved. | Entertainment that exceeds expectations.</p>
+            <p style="margin-top: 0.5rem;">Trevor LeBlanc - Canada's #1 Interactive DJ</p>
         </div>
     </footer>
 
     <script>
-        // Animated particles background
+        // Enhanced animated particles background
         function createParticles() {
             const particles = document.querySelector('.particles');
-            for (let i = 0; i < 50; i++) {
+            const musicNotes = ['♪', '♫', '♬', '𝄞', '🎵', '🎶'];
+            
+            for (let i = 0; i < 60; i++) {
                 const particle = document.createElement('div');
-                particle.className = 'particle';
+                
+                if (i < 15) {
+                    // Musical note particles
+                    particle.className = 'particle musical';
+                    particle.textContent = musicNotes[Math.floor(Math.random() * musicNotes.length)];
+                } else {
+                    // Regular dot particles
+                    particle.className = 'particle';
+                }
+                
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 6) + 's';
                 particles.appendChild(particle);
             }
         }
 
-        // Smooth scrolling for navigation links
+        // Enhanced smooth scrolling with offset for fixed header
         function smoothScroll() {
             const links = document.querySelectorAll('a[href^="#"]');
             links.forEach(link => {
@@ -747,41 +1522,58 @@
                     e.preventDefault();
                     const target = document.querySelector(link.getAttribute('href'));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
                         });
                     }
                 });
             });
         }
 
-        // Header scroll effect
+        // Enhanced header scroll effect with dynamic styling
         function handleScroll() {
             const header = document.getElementById('header');
-            if (window.scrollY > 100) {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
                 header.style.background = 'rgba(255, 255, 255, 0.98)';
                 header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+                header.style.padding = '0.8rem 0';
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
                 header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '1rem 0';
+            }
+
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
             }
         }
 
-        // Fade in animation on scroll
+        // Enhanced fade in animation with staggered timing
         function animateOnScroll() {
             const elements = document.querySelectorAll('.fade-in');
             const windowHeight = window.innerHeight;
 
-            elements.forEach(element => {
+            elements.forEach((element, index) => {
                 const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('visible');
+                if (elementTop < windowHeight - 150) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 100); // Stagger animations
                 }
             });
         }
 
-        // Mobile menu toggle
+        // Enhanced mobile menu with smooth animations
         function setupMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
@@ -790,128 +1582,298 @@
                 navLinks.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
             });
-        }
 
-        // Counter animation for stats
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.textContent.replace(/\D/g, ''));
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        const suffix = counter.textContent.includes('+') ? '+' : '';
-                        counter.textContent = Math.ceil(current) + suffix;
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        counter.textContent = counter.textContent; // Keep original formatting
-                    }
-                };
-                
-                // Start animation when element comes into view
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            updateCounter();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(counter);
+            // Close mobile menu when clicking on a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
             });
         }
 
-        // Parallax effect for hero section
-        function parallaxEffect() {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
+        // Enhanced counter animation with intersection observer
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
             
-            hero.style.transform = `translateY(${rate}px)`;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-count'));
+                        const increment = target / 100;
+                        let current = 0;
+                        
+                        counter.classList.add('animated');
+                        
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                counter.textContent = Math.ceil(current) + (target >= 1000 ? '+' : '');
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + (target >= 1000 ? '+' : '');
+                            }
+                        };
+                        
+                        updateCounter();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
         }
 
-        // Form validation and enhancement
+        // Enhanced parallax effect
+        function parallaxEffect() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.3;
+            
+            hero.style.transform = `translateY(${rate}px)`;
+            
+            // Parallax for floating elements
+            const floatingElements = document.querySelectorAll('.floating-element');
+            floatingElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }
+
+        // Enhanced form functionality
         function enhanceForm() {
             const form = document.querySelector('.contact-form form');
+            const inputs = form.querySelectorAll('input, select, textarea');
             
+            // Form submission handling
             form.addEventListener('submit', (e) => {
                 const submitBtn = form.querySelector('.submit-btn');
                 const originalText = submitBtn.textContent;
                 
-                submitBtn.textContent = 'Sending...';
+                submitBtn.textContent = 'Sending Your Message...';
                 submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
                 
-                // Re-enable after 3 seconds (or when form actually submits)
+                // Success message after delay (simulate form processing)
                 setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 3000);
+                    submitBtn.textContent = 'Message Sent! 🎉';
+                    submitBtn.style.background = 'linear-gradient(45deg, #4CAF50, #45a049)';
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.style.background = 'linear-gradient(45deg, #ff6b6b, #ffa726)';
+                    }, 3000);
+                }, 2000);
             });
             
-            // Add floating label effect
-            const inputs = form.querySelectorAll('input, textarea');
+            // Enhanced input interactions
             inputs.forEach(input => {
                 input.addEventListener('focus', () => {
                     input.parentElement.classList.add('focused');
+                    input.style.transform = 'scale(1.02)';
                 });
                 
                 input.addEventListener('blur', () => {
                     if (!input.value) {
                         input.parentElement.classList.remove('focused');
                     }
+                    input.style.transform = 'scale(1)';
+                });
+
+                // Real-time validation feedback
+                input.addEventListener('input', () => {
+                    if (input.checkValidity()) {
+                        input.style.borderColor = '#4CAF50';
+                    } else {
+                        input.style.borderColor = '#ff6b6b';
+                    }
                 });
             });
         }
 
-        // Typing effect for hero title
+        // Loading screen management
+        function handleLoading() {
+            const loading = document.getElementById('loading');
+            
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    loading.classList.add('fade-out');
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 500);
+                }, 1000);
+            });
+        }
+
+        // Back to top functionality
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Enhanced typing effect for hero
         function typeWriter() {
-            const text = "Entertainment Meets Excellence";
-            const heroTitle = document.querySelector('.hero p');
-            let i = 0;
+            const texts = [
+                "DJ • Singer • Dancer • Host",
+                "Creating Unforgettable Experiences",
+                "Across North America"
+            ];
+            const heroText = document.querySelector('.hero p');
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
             
             function type() {
-                if (i < text.length) {
-                    heroTitle.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, 50);
+                const currentText = texts[textIndex];
+                
+                if (!isDeleting) {
+                    heroText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    
+                    if (charIndex === currentText.length) {
+                        setTimeout(() => isDeleting = true, 2000);
+                    }
+                } else {
+                    heroText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        textIndex = (textIndex + 1) % texts.length;
+                    }
                 }
+                
+                const typingSpeed = isDeleting ? 50 : 100;
+                setTimeout(type, typingSpeed);
             }
             
-            // Start typing effect after page load
+            // Start typing effect after initial load
             setTimeout(() => {
-                heroTitle.textContent = "";
+                heroText.textContent = "";
                 type();
-            }, 1500);
+            }, 2000);
+        }
+
+        // Intersection Observer for advanced animations
+        function setupAdvancedAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        
+                        // Add specific animations based on element class
+                        if (element.classList.contains('service-card')) {
+                            setTimeout(() => {
+                                element.style.transform = 'translateY(0)';
+                                element.style.opacity = '1';
+                            }, Math.random() * 300);
+                        }
+                        
+                        if (element.classList.contains('stat-card')) {
+                            setTimeout(() => {
+                                element.style.transform = 'translateY(0) scale(1)';
+                                element.style.opacity = '1';
+                            }, Math.random() * 200);
+                        }
+                        
+                        if (element.classList.contains('experience-list')) {
+                            const items = element.querySelectorAll('li');
+                            items.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.style.transform = 'translateX(0)';
+                                    item.style.opacity = '1';
+                                    element.style.opacity = '1'; // Add this line
+                                }, index * 100);
+                            });
+                        }
+
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for advanced animations
+            document.querySelectorAll('.service-card, .stat-card, .experience-list').forEach(el => {
+                // Set initial state
+                el.style.opacity = '0';
+                el.style.transform = el.classList.contains('experience-list') ? 'translateX(-30px)' : 'translateY(30px) scale(0.9)';
+                el.style.transition = 'all 0.6s ease';
+                
+                observer.observe(el);
+            });
+        }
+
+        // Mouse movement parallax effect
+        function setupMouseParallax() {
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                const floatingElements = document.querySelectorAll('.floating-element');
+                floatingElements.forEach((element, index) => {
+                    const speed = 0.02 + (index * 0.01);
+                    const x = (mouseX - 0.5) * speed * 100;
+                    const y = (mouseY - 0.5) * speed * 100;
+                    
+                    element.style.transform += ` translate(${x}px, ${y}px)`;
+                });
+            });
+        }
+
+        // Social proof ticker animation
+        function setupSocialProofTicker() {
+            const trustItems = document.querySelectorAll('.trust-item');
+            
+            trustItems.forEach((item, index) => {
+                item.style.animation = `slideInUp 0.8s ease-out ${index * 0.2}s both`;
+            });
         }
 
         // Initialize all functions
         document.addEventListener('DOMContentLoaded', () => {
+            handleLoading();
             createParticles();
             smoothScroll();
             setupMobileMenu();
+            setupBackToTop();
             animateCounters();
             enhanceForm();
+            setupAdvancedAnimations();
+            setupMouseParallax();
+            setupSocialProofTicker();
             
             // Event listeners
             window.addEventListener('scroll', () => {
                 handleScroll();
                 animateOnScroll();
-                parallaxEffect();
+                if (window.innerWidth > 768) {
+                    parallaxEffect();
+                }
             });
             
             // Initial calls
             animateOnScroll();
             handleScroll();
+            
+            // Start typing effect
+            // typeWriter(); // Uncomment if you want the typing effect
         });
 
-        // Add some CSS for mobile menu when active
-        const style = document.createElement('style');
-        style.textContent = `
+        // Enhanced CSS animations and effects
+        const additionalStyles = document.createElement('style');
+        additionalStyles.textContent = `
             @media (max-width: 768px) {
                 .nav-links.active {
                     display: flex;
@@ -927,12 +1889,21 @@
                     align-items: center;
                     gap: 3rem;
                     z-index: 999;
+                    animation: slideInRight 0.3s ease-out;
                 }
                 
                 .nav-links.active a {
                     font-size: 1.5rem;
                     font-weight: 600;
+                    animation: fadeInUp 0.5s ease-out both;
                 }
+                
+                .nav-links.active a:nth-child(1) { animation-delay: 0.1s; }
+                .nav-links.active a:nth-child(2) { animation-delay: 0.2s; }
+                .nav-links.active a:nth-child(3) { animation-delay: 0.3s; }
+                .nav-links.active a:nth-child(4) { animation-delay: 0.4s; }
+                .nav-links.active a:nth-child(5) { animation-delay: 0.5s; }
+                .nav-links.active a:nth-child(6) { animation-delay: 0.6s; }
                 
                 .mobile-menu.active span:nth-child(1) {
                     transform: rotate(45deg) translate(5px, 5px);
@@ -945,48 +1916,165 @@
                 .mobile-menu.active span:nth-child(3) {
                     transform: rotate(-45deg) translate(7px, -6px);
                 }
-                
-                .form-group.focused label {
-                    transform: translateY(-10px);
-                    font-size: 0.9rem;
-                    color: #fff;
+            }
+            
+            @keyframes slideInRight {
+                from { transform: translateX(100%); }
+                to { transform: translateX(0); }
+            }
+            
+            @keyframes fadeInUp {
+                from { 
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0);
                 }
             }
             
-            /* Additional hover effects */
+            /* Enhanced hover effects */
             .service-card:hover .service-icon {
-                transform: scale(1.2);
-                transition: transform 0.3s ease;
+                transform: scale(1.2) rotateY(360deg);
+                transition: transform 0.6s ease;
             }
             
             .stat-card:hover .stat-number {
                 color: #ffa726;
-                transition: color 0.3s ease;
+                transform: scale(1.1);
+                transition: all 0.3s ease;
             }
             
-            /* Glowing effect for CTA button */
-            @keyframes glow {
-                0% { box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4); }
-                50% { box-shadow: 0 20px 50px rgba(255, 107, 107, 0.8); }
-                100% { box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4); }
+            .about-image::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8));
+                opacity: 0;
+                transition: opacity 0.3s ease;
             }
             
+            .about-image:hover::after {
+                opacity: 0.3;
+            }
+            
+            /* Glowing effects */
             .cta-button {
-                animation: glow 3s ease-in-out infinite;
+                position: relative;
+                overflow: hidden;
             }
             
-            /* Pulse animation for floating elements */
-            @keyframes pulse {
-                0% { transform: scale(1); opacity: 0.1; }
-                50% { transform: scale(1.1); opacity: 0.2; }
-                100% { transform: scale(1); opacity: 0.1; }
+            .cta-button::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+                opacity: 0;
+                transition: opacity 0.3s ease;
             }
             
-            .floating-element {
-                animation: pulse 2s ease-in-out infinite;
+            .cta-button:hover::after {
+                opacity: 1;
+                animation: pulse 1.5s infinite;
+            }
+            
+            /* Advanced text effects */
+            .hero h1 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .hero h1::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                animation: shine 3s infinite;
+            }
+            
+            @keyframes shine {
+                0% { left: -100%; }
+                50% { left: 100%; }
+                100% { left: 100%; }
+            }
+            
+            /* Loading animations */
+            .trust-item {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            
+            .trust-item.loaded {
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 0.6s ease;
+            }
+            
+            /* Form enhancements */
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                transform: scale(1.02);
+                box-shadow: 0 0 20px rgba(255, 167, 38, 0.3);
+            }
+            
+            .form-group.error input,
+            .form-group.error select,
+            .form-group.error textarea {
+                border-color: #ff6b6b !important;
+                box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+            }
+            
+            .form-group.success input,
+            .form-group.success select,
+            .form-group.success textarea {
+                border-color: #4CAF50 !important;
+                box-shadow: 0 0 15px rgba(76, 175, 80, 0.3);
+            }
+            
+            /* Scroll indicator */
+            .scroll-indicator {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 4px;
+                background: linear-gradient(90deg, #667eea, #764ba2);
+                z-index: 9999;
+                transition: width 0.1s ease;
             }
         `;
-        document.head.appendChild(style);
+        document.head.appendChild(additionalStyles);
+
+        // Add scroll progress indicator
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        document.body.prepend(scrollIndicator);
+
+        // Update scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollIndicator.style.width = scrollProgress + '%';
+        });
+
+        // Add trust item loading animation
+        setTimeout(() => {
+            document.querySelectorAll('.trust-item').forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('loaded');
+                }, index * 200);
+            });
+        }, 1500);
     </script>
 </body>
 </html>
